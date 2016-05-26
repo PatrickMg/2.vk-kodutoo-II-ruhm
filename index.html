@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saladus v0.2</title>
+  <script src="functions.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="col-sm-3">
+  </div>
+<div class="col-sm-6">
+  <nav class="menu">
+    <ul class="menu-list">
+      <li class="menu-item"><a href="#home-view" class="menu-link home-view active-menu">Avaleht</a></li>
+      <li class="menu-item"><a href="#list-view" class="menu-link list-view">Saladused</a></li>
+      <li class="menu-item"><a href="#manage-view" class="menu-link manage-view">Jutusta</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="col-sm-3">
+</div>
+  <main role="main">
+
+    <div id="list-view">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-6">
+      <h1>Loend</h1>
+      <p class="loading"></p><br>
+      <input type="search" placeholder="Sisesta kuupäev või sõna" id="search"><br>
+      <ul class="list-of-secrets"></ul>
+    </div>
+    <div class="col-sm-3">
+    </div>
+    </div>
+    <div id="manage-view">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-6">
+      <h1>Kirjelda oma saladust</h1>
+
+      <label for="saladus">Sisesta oma saladus: </label><br>
+      <input type="text" name="saladus" class="saladus"><br>
+
+      <label for="date">Kuupäev: </label><br>
+      <input type="text" name="date" class="date"><br>
+
+      <button class="add-new-secret pull-right">Salvesta saladus</button>
+    </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+
+    <div id="home-view">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-6">
+        <h2>Tere tulemast!</h2>
+        <p>See leht on tehtud õppetöö raames. Selle loomiseks kasutati tunnis läbi käidud materjali.</p>
+        <h3>Psst, siin rakenduses saad oma saladusi hoida!</h3>
+        <p id="hidden">Rakendus on tore sellepärast, et peale refreshimist kaovad kõik saladused ja sa saad suurest raskusest lahti.</p>
+        <p>Siin lehel on lisaks localStorage-le kasutatud ka Bootstrapi, mille abil saab veebirakenduse kujundust
+        teha mobiilsetel seadmetel töötavaks ning samuti on võimalik rakendust kasutada arvutis.</p>
+      </div>
+          <div class="col-sm-3">
+          </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
