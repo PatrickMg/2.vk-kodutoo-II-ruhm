@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Saladus v0.2</title>
+  <title>Saladus v1.0</title>
   <script src="functions.js" charset="utf-8"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="backChange">
   <div class="col-sm-3">
   </div>
 <div class="col-sm-6">
@@ -17,7 +18,8 @@
     <ul class="menu-list">
       <li class="menu-item"><a href="#home-view" class="menu-link home-view active-menu">Avaleht</a></li>
       <li class="menu-item"><a href="#list-view" class="menu-link list-view">Saladused</a></li>
-      <li class="menu-item"><a href="#manage-view" class="menu-link manage-view">Jutusta</a></li>
+      <li class="menu-item"><a href="#add-view" class="menu-link add-view">Jutusta</a></li>
+      <li class="menu-item"><a href="#settings" class="menu-link settings">Seaded</a></li>
     </ul>
   </nav>
 </div>
@@ -25,22 +27,22 @@
 </div>
   <main role="main">
 
-    <div id="list-view">
-      <div class="col-sm-3">
+    <div id="list-view" class="row">
+      <div class="col-sm-4">
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-4">
       <h1>Loend</h1>
       <p class="loading"></p><br>
       <input type="search" placeholder="Sisesta kuupäev või sõna" id="search"><br>
       <ul class="list-of-secrets"></ul>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
     </div>
     </div>
-    <div id="manage-view">
-      <div class="col-sm-3">
+    <div id="add-view" class="row">
+      <div class="col-sm-4">
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-4">
       <h1>Kirjelda oma saladust</h1>
 
       <label for="saladus">Sisesta oma saladus: </label><br>
@@ -49,28 +51,61 @@
       <label for="date">Kuupäev: </label><br>
       <input type="text" name="date" class="date"><br>
 
-      <button class="add-new-secret pull-right">Salvesta saladus</button>
+      <button class="add-new-secret pull-right">Salvesta</button>
     </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
         </div>
     </div>
 
-    <div id="home-view">
-      <div class="col-sm-3">
+    <div id="home-view" class="row">
+      <div class="col-sm-4">
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <h2>Tere tulemast!</h2>
         <p>See leht on tehtud õppetöö raames. Selle loomiseks kasutati tunnis läbi käidud materjali.</p>
         <h3>Psst, siin rakenduses saad oma saladusi hoida!</h3>
-        <p id="hidden">Rakendus on tore sellepärast, et peale refreshimist kaovad kõik saladused ja sa saad suurest raskusest lahti.</p>
-        <p>Siin lehel on lisaks localStorage-le kasutatud ka Bootstrapi, mille abil saab veebirakenduse kujundust
-        teha mobiilsetel seadmetel töötavaks ning samuti on võimalik rakendust kasutada arvutis.</p>
+        <p id="hidden">Rakendus on tore sellepärast, et seda saab kasutada kõikide asjade meelde jätmiseks.</p>
+        <p>Nüüd on rakendusele lisatud juurde andmebaas ja AJAXi käsud. Samuti on rakenduse kujundusele lisatud Bootstrap raamistik, mis aitab
+        luua mobiilisõbralikku kujundust. Antud rakendus töötab väga ilusti nii mobiilsetel seadmetel kui ka arvutites.</p>
       </div>
-          <div class="col-sm-3">
+          <div class="col-sm-4">
           </div>
+    </div>
+    <div id="settings">
+      <div class="row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-4">
+        <p>Soovid vahetada oma taustavärvi? Vali color pickerist omale sobiv värv, mida soovid taustaks lisada.</p>
+  <!-- Color Picker Script -->
+  <div style="font-family:Arial,Helvetica,sans-serif;border:solid 1px #cccccc;position:absolute;width:240px;height:326px;background: #ffffff;-moz-box-shadow:0 0 6px rgba(0,0,0,.25);-webkit-box-shadow: 0 0 6px rgba(0,0,0,.25);box-shadow:0 0 6px rgba(0,0,0,.25);-moz-border-radius: 5px;-webkit-border-radius:5px;border-radius:5px;"><div style="background-color:#2d6ab4;position:absolute;top:0px;left:0px; width:100%; height:22px;text-align:center;padding-top:2px;font-weight:bold;border-top-right-radius:5px;border-top-left-radius:5px;"><a style="text-decoration:none;color:#ffffff;" target="_blank" href="http://www.colorcodehex.com/"></a></div><script src="http://widget.colorcodehex.com/color-picker/abcdef.html" type="text/javascript"></script></div>
+
+        <script type="text/javascript">
+          function backgroundChange(event){
+            var rgb = document.getElementById("colorbg").style.backgroundColor;
+            console.log(rgb);
+            document.body.style.backgroundColor =rgb;
+          }
+          function backtonormal(){
+            document.body.style.backgroundColor="rgb(255,255,255)";
+          }
+        </script>
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+          <button onclick="backgroundChange()" style:"margin-top=100px;">Vali värv</button>
+          <button onclick="backtonormal()" style:"margin-top=10px;">Reset</button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
     </div>
 
   </main>
 
 </body>
-</html>
